@@ -1,37 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+html {
+  font-size: 62.5%;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-weight: 400;
+  text-align: center;
+  min-width: 330px;
+}
 
 body {
-  background-color: #24292e;
-  font-family: "Kumbh Sans", sans-serif;
-  text-align: center;
-  min-width: 335px;
+  background-color: var(--color-background);
 }
 
 main {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 50px 0 50px 0;
+  padding: 50px 0;
 }
 
 .fa-github {
-  font-size: 60px;
+  font-size: var(--font-size-extra-large);
   margin-bottom: 30px;
-  color: #FFFFFF;
+  color: var(--color-secundary);
+  transition: 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  scale: 1.05;
+  color: var(--color-accent);
 }
 
 .container {
   width: 60%;
   max-width: 960px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
-  background-color: #fff;
+  box-shadow: 0 27px 49px -25px var(--color-primary);
+  background-color: var(--color-element-background);
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 30px;
-  padding: 30px;
   margin: 0 auto;
 }
+
 /* USER SEARCH */
 .container header {
   display: flex;
@@ -40,72 +50,82 @@ main {
   padding: 30px 0;
 }
 
-.container header h2 {
-  font-size: 20px;
+.subtitles {
+  font-size: var(--font-size-medium);
   font-weight: 700;
-  margin-bottom: 30px;
+  margin: 10px 0;
 }
 
 .container header #input-search {
   width: 400px;
-  font-size: 17px;
-  margin: 0 auto;
+  font-size: var(--font-size-base);
+  margin: 30px auto;
   padding: 10px;
   border-radius: 7px;
-  border: 1px solid grey;
+  border: 1px solid var(--color-primary);
 }
 
 .container header #btn-search {
   width: 200px;
-  font-size: 17px;
-  margin: 20px auto 0;
+  font-size: var(--font-size-base);
+  margin: 0 auto;
   padding: 10px;
-  border-radius: 7px;
+  border-radius: 10px;
   cursor: pointer;
-  border: 1px solid grey;
+  background-color: var(--color-primary);
+  color: var(--color-secundary);
+  border: 2px solid var(--color-primary);
+  transition: 0.2s ease-in-out;
 }
 
 .container header #btn-search:hover {
-  background-color: #24292e;
-  color: #ffffff;
-  border-color: #ffffff;
+  scale: 1.01;
+  background-color: var(--color-accent);
 }
-
 
 /* USER INFO */
 .container .profile-data {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
 }
 
 .container .profile-data .info {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 10px;
+  width: 100%;
+}
+
+container .profile-data .info a {
+  width: 50%;
+  height: auto;
 }
 
 .container .profile-data .info img {
-  width: 50%;
+  width: 80%;
   border-radius: 50%;
-  border: 10px solid #24292e;
+  border: 10px solid var(--color-background);
+  transition: 0.2s ease-in-out;
+}
+
+.container .profile-data .info img:hover {
+  scale: 1.01;
 }
 
 .container .profile-data .info .data {
-  padding: 40px;
+  text-align: left;
   width: 50%;
+  padding-right: 20px;
 }
 
 .container .profile-data .info h1 {
-  font-size: 20px;
+  font-size: var(--font-size-medium);
   margin-bottom: 20px;
   font-weight: 700;
 }
 
 .container .profile-data .info p {
-  font-size: 15px;
+  font-size: var(--font-size-base);
   font-weight: 400;
   margin-bottom: 10px;
 }
@@ -116,7 +136,7 @@ main {
 
 /* SOCIAL USER */
 
-.container .profile-data .social{
+.container .profile-data .social {
   width: 90%;
   height: auto;
   display: flex;
@@ -126,7 +146,7 @@ main {
 }
 
 .container .profile-data .social div i {
-  font-size: 20px;
+  font-size: var(--font-size-medium);
 }
 
 .container .profile-data .social div {
@@ -135,10 +155,17 @@ main {
 }
 
 .container .profile-data .social div a {
+  font-size: var(--font-size-base);
   margin: 0 10px;
+  color: var(--color-primary);
+  transition: 0.2s ease-in-out;
 }
 
-.container .profile-data .social img{
+.container .profile-data .social div a:hover {
+  color: var(--color-accent);
+}
+
+.container .profile-data .social img {
   width: 100%;
 }
 
@@ -146,41 +173,36 @@ main {
 
 .container .profile-data .events {
   margin-bottom: 10px;
-}
-
-.container .profile-data .events h2 {
-  font-size: 20px;
-  margin: 10px 0;
+  padding: 0 20px;
 }
 
 .container .profile-data .events th {
-  background-color: #24292e;
-  color: #fff;
-  border: 0.5px solid gray;
-  font-size: 12px;
+  background-color: var(--color-primary);
+  color: var(--color-secundary);
+  font-size: var(--font-size-small);
 }
 
-.container .profile-data .events td{
+.container .profile-data .events td {
   height: 50px;
-  border: 0.5px solid gray;
-  font-size: 14px;
+  border: 0.5px solid var(--color-primary);
+  font-size: var(--font-size-small);
   padding: 0 10px;
 }
 
-.container .profile-data .events tr:hover{
-  background-color: #eeeded;
+.container .profile-data .events tr {
+  transition: 0.3s ease-in-out;
 }
 
-.container .profile-data .events tr:hover td{
-  color: darkblue;
+.container .profile-data .events tr:hover a {
+  color: var(--color-secundary);
+}
+
+.container .profile-data .events tr:hover {
+  background-color: var(--color-accent);
+  opacity: 0.8;
 }
 
 /* REPOSITORIES */
-
-.container .profile-data .repositories h2 {
-  font-size: 20px;
-  margin: 10px 0;
-}
 
 .container .profile-data .repositories ul {
   display: flex;
@@ -189,35 +211,41 @@ main {
 }
 
 .container .profile-data .repositories ul li {
-  border: 1px solid grey;
+  border: 1px solid var(--color-primary);
   margin: 15px;
   display: block;
   border-radius: 10px;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
-.container .profile-data .repositories ul li a{
+.container .profile-data .repositories ul li a {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  font-size: var(--font-size-base);
+  transition: 0.2s ease-in-out;
+}
+
+.container .profile-data .repositories ul li:hover a {
+  color: var(--color-secundary);
 }
 
 .container .profile-data .repositories ul li:hover {
-  background-color: #222f3b;
-  color: #fff;
+  background-color: var(--color-accent);
+  scale: 1.05;
 }
 
-.container .profile-data .repositories ul li:hover span{
-  background-color: #fff;
-  color: #222f3b;
+.container .profile-data .repositories ul li:hover span {
+  background-color: var(--color-secundary);
+  color: var(--color-primary);
 }
 
-.repositories ul li span{
+.repositories ul li span {
   display: inline-block;
-  background-color: #222f3b;
+  background-color: var(--color-primary);
   padding: 5px 10px;
   margin: 5px 0;
   border-radius: 10px;
-  color: #FFF;
+  color: var(--color-secundary);
   transition: 0.3s ease-in-out;
 }
