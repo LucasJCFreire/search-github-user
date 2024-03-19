@@ -71,22 +71,20 @@
   }
 
   .container .profile-data .events {
-    transform: translateY(-100px);
-    scale: 0.8;
     margin-bottom: 0px;
     padding: 0 5px;
   }
 
-  .container .profile-data .events h2 {
-    margin: 0 0 10px 0;
-    font-size: var(--font-size-large);
-  }
-
-  .gap-repository {
-    transform: translateY(-180px);
+  .container .profile-data .events table th:nth-child(2),
+  .container .profile-data .events table td:nth-child(2){
+    display: none;
   }
 
   .container .profile-data .repositories ul li {
     width: 250px;
+  }
+
+  .container .profile-data .repositories ul li a {
+    font-size: var(--font-size-small);
   }
 }

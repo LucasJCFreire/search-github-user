@@ -79,10 +79,6 @@ const injectHtml = {
                 <h2 class="subtitles">Repositórios</h2>
                 <ul>${repositoriesItens}</ul>
             </div>`
-
-            if (userInformation.events.length > 0) {
-                document.querySelector('.repositories').classList.add('gap-repository')
-            }
         }
     }
 }

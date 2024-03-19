@@ -19,7 +19,11 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
     const isEnterKeyPressed = key === 13
 
     if (isEnterKeyPressed) {
-        insertUserData(userName)
+        if (userName.length > 0) {
+            insertUserData(userName)
+        } else {
+            alert('Insira um nome de usuário')
+        }
     }
 })
 
